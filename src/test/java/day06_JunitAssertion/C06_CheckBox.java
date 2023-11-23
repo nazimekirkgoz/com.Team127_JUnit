@@ -29,6 +29,7 @@ public class C06_CheckBox {
 
     @After
     public void teardown(){
+
         driver.quit();
     }
 
@@ -39,11 +40,12 @@ public class C06_CheckBox {
         driver.get("https://testotomasyonu.com/form");
         //	b. Sirt Agrisi ve Carpinti checkbox’larini secin
         WebElement sirtAgrisiCheckBox = driver.findElement(By.id("gridCheck5"));
-        sirtAgrisiCheckBox.click();
+        sirtAgrisiCheckBox.submit();
 
         WebElement carpintiCheckBox = driver.findElement(By.id("gridCheck4"));
         WebElement carpintiYaziElementi = driver.findElement(By.xpath("//*[@for='gridCheck4']"));
-        carpintiYaziElementi.click();
+        carpintiYaziElementi.submit();
+        ReusableMethods.bekle(2);
 
         //	c. Sirt Agrisi ve Carpinti checkbox’larininin seçili
         //  	olduğunu test edin

@@ -13,7 +13,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class C04_Assertions {
-
     //) https://www.bestbuy.com/ Adresine gidin
     // farkli test method’lari olusturarak asagidaki testleri yapin
     //		○ Sayfa URL’inin https://www.bestbuy.com/ ‘a esit oldugunu test edin
@@ -21,7 +20,9 @@ public class C04_Assertions {
     //		○ logoTest => BestBuy logosunun görüntülendigini test edin
     //		○ FrancaisLinkTest => Fransizca Linkin görüntülendiğini test edin
 
-    static WebDriver driver;
+
+   static WebDriver driver;
+
 
     @BeforeClass
     public static void setup(){
@@ -74,6 +75,10 @@ public class C04_Assertions {
         WebElement francaisLinkElementi = driver.findElement(By.xpath("//*[text()='Français']"));
 
         Assert.assertTrue(francaisLinkElementi.isDisplayed());
+
+
+
+
     }
 
 }

@@ -27,7 +27,7 @@ public class C01_BeforeAfterNotasyonlari {
     WebDriver driver;
 
     @Before
-    public void setup(){
+    public void setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -35,12 +35,12 @@ public class C01_BeforeAfterNotasyonlari {
     }
 
     @After
-    public void teardown(){
+    public void teardown() {
         driver.quit();
     }
 
     @Test
-    public void phoneTesti(){
+    public void phoneTesti() {
         // 1- test otomasyonu.com sitesine gidin
         driver.get("https://www.testotomasyonu.com");
         // 2- phone icin arama yapin
@@ -48,20 +48,21 @@ public class C01_BeforeAfterNotasyonlari {
         aramaKutusu.sendKeys("phone" + Keys.ENTER);
         // 3- arama sonucunda urun bulunabildigini test edin
         WebElement aramaSonucElementi = driver.findElement(By.className("product-count-text"));
-        String aramaSonucSayisiStr= aramaSonucElementi.getText().replaceAll("\\D","");
+        String aramaSonucSayisiStr = aramaSonucElementi.getText().replaceAll("\\D", "");
         int aramaSonucSayisi = Integer.parseInt(aramaSonucSayisiStr);
 
-        if (aramaSonucSayisi>90){
+        if (aramaSonucSayisi > 0) {
             System.out.println("phone testi PASSED");
-        }else{
+        } else {
             System.out.println("phone testi FAILED");
-            //throw new AssertionFailedError();
+            throw new AssertionFailedError();
         }
         ReusableMethods.bekle(2);
+
     }
 
-    @Test @Ignore
-    public void shoesTesti(){
+    @Test
+    public void shoesTesti() {
         // 1- test otomasyonu.com sitesine gidin
         driver.get("https://www.testotomasyonu.com");
         // 2- shoes icin arama yapin
@@ -69,12 +70,12 @@ public class C01_BeforeAfterNotasyonlari {
         aramaKutusu.sendKeys("shoes" + Keys.ENTER);
         // 3- arama sonucunda urun bulunabildigini test edin
         WebElement aramaSonucElementi = driver.findElement(By.className("product-count-text"));
-        String aramaSonucSayisiStr= aramaSonucElementi.getText().replaceAll("\\D","");
+        String aramaSonucSayisiStr = aramaSonucElementi.getText().replaceAll("\\D", "");
         int aramaSonucSayisi = Integer.parseInt(aramaSonucSayisiStr);
 
-        if (aramaSonucSayisi>0){
+        if (aramaSonucSayisi > 0) {
             System.out.println("shoes testi PASSED");
-        }else{
+        } else {
             System.out.println("shoes testi FAILED");
             throw new AssertionFailedError();
         }
@@ -82,7 +83,7 @@ public class C01_BeforeAfterNotasyonlari {
     }
 
     @Test
-    public void dressTesti(){
+    public void dressTesti() {
         // 1- test otomasyonu.com sitesine gidin
         driver.get("https://www.testotomasyonu.com");
         // 2- dress icin arama yapin
@@ -90,15 +91,17 @@ public class C01_BeforeAfterNotasyonlari {
         aramaKutusu.sendKeys("dress" + Keys.ENTER);
         // 3- arama sonucunda urun bulunabildigini test edin
         WebElement aramaSonucElementi = driver.findElement(By.className("product-count-text"));
-        String aramaSonucSayisiStr= aramaSonucElementi.getText().replaceAll("\\D","");
+        String aramaSonucSayisiStr = aramaSonucElementi.getText().replaceAll("\\D", "");
         int aramaSonucSayisi = Integer.parseInt(aramaSonucSayisiStr);
 
-        if (aramaSonucSayisi>0){
+        if (aramaSonucSayisi > 0) {
             System.out.println("dress testi PASSED");
-        }else{
+        } else {
             System.out.println("dress testi FAILED");
             throw new AssertionFailedError();
         }
         ReusableMethods.bekle(2);
     }
 }
+
+

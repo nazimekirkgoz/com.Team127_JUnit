@@ -1,58 +1,66 @@
 package day06_JunitAssertion;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import junit.framework.AssertionFailedError;
+import org.junit.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utilities.ReusableMethods;
 
 import java.time.Duration;
 
 public class test {
+
+   static WebDriver driver;
+    @BeforeClass
+    public  static  void setup(){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+
+
+    }
+    @After
+    public void teardown(){
+        driver.quit();
+    }
+
     /*
-    ) https://www.bestbuy.com/ Adresine gidin farkli test method’lari olusturarak asagidaki testleri yapin
- ○ Sayfa URL’inin https://www.bestbuy.com/ ’a esit oldugunu test edin
- ○ titleTest => Sayfa başlığının “Rest” içermediğini(contains) test edin
- ○ logoTest => BestBuy logosunun görüntülendigini test edin
- ○ FrancaisLinkTest => Fransizca Linkin görüntülendiğini test edin
+    a. Verilen web sayfasına gidin.
+     https://testotomasyonu.com/form
+
+
+ b. Sirt Agrisi ve Carpinti checkbox’larini secin
+ c. Sirt Agrisi ve Carpinti checkbox’larininin seçili                                  olduğunu test edin
+ d. Seker ve Epilepsi checkbox’larininin seçili                                  olmadigini test edin
      */
- static    WebDriver driver;
-@BeforeClass
-    public static void setup(){
-    WebDriverManager.chromedriver().setup();
-    driver=new ChromeDriver();
-    driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    driver.get("https://www.bestbuy.com");
+    @Test
+    public void checkboxTesti(){
+        driver.get("https://testotomasyonu.com/form");
+        WebElement sirtAgrisiCheckBox = driver.findElement(By.id("gridCheck5"));
 
-}
-@Test
-    public static void urlTesti(){
-    String expectedurl="https://www.bestbuy.com";
-    String actualurl= driver.getCurrentUrl();
-    Assert.assertEquals(expectedurl,actualurl);
+        sirtAgrisiCheckBox.submit();
+        WebElement carpinti=  driver.findElement(By.id("gridCheck4"));
+        carpinti.click();
 
 
-}
-@Test
-    public static final void titletest(){
-    String unexpectedicerik="Rest";
-    String actualTitle= driver.getTitle();
-    Assert.assertFalse(actualTitle.contains(unexpectedicerik));
+
+
+
 
 
 }
-@Test
-    public static   void logotesti(){
-    WebElement logo=driver.findElement(By.xpath("(//img[@class=‘logo’])[1]"));
-    Assert.assertTrue(logo.isDisplayed());
-}
-@Test
-    public static  void francislink(){
-    WebElement francis= driver.findElement(By.className("Français"));
-}
-}
+
+
+        }
+
+
+
+
+
+
