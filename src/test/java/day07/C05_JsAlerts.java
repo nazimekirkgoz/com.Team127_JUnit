@@ -7,7 +7,8 @@ import org.openqa.selenium.WebElement;
 import utilities.ReusableMethods;
 import utilities.TestBase;
 
-public class C05_JsAlerts extends TestBase {
+public class
+C05_JsAlerts extends TestBase {
 
     //3 test method'u olusturup asagidaki gorevi tamamlayin
 
