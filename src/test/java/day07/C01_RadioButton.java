@@ -31,7 +31,7 @@ public class C01_RadioButton {
     public void teardown(){
         driver.quit();
     }
-
+// yorum satiri
     @Test
     public void radioButtonKutuTesti(){
         //	a. Verilen web sayfasına gidin.
