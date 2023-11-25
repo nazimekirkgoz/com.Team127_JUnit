@@ -31,7 +31,7 @@ public class C05_TestNotasyonu {
         if (actualTitle.contains(expectedTitleIcerik)){
             System.out.println("Test otomasyonu testi PASSED");
         }else System.out.println("Test otomasyonu testi FAILED");
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(3);
         driver.quit();
     }
 

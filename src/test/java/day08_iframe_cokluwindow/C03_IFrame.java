@@ -12,7 +12,7 @@ public class C03_IFrame extends TestBase {
 
     @Test
     public void test01(){
-        //http://demo.guru99.com/test/guru99home/ sitesine gidiniz
+        //http://demo.guru99.com/ sitesine gidiniz
         driver.get("http://demo.guru99.com/test/guru99home/");
         //Cookies kabul edin
         // cookies de iframe icinde oldugundan
