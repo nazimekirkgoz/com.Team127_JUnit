@@ -1,18 +1,10 @@
 package day06_JunitAssertion;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import junit.framework.AssertionFailedError;
 import org.junit.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import utilities.ReusableMethods;
 import utilities.TestBase;
-
-import java.time.Duration;
 
 public class test extends TestBase {
     /*
