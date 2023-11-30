@@ -17,12 +17,12 @@ public class C03_FilesExistsTesti extends TestBase {
         //2. https://the-internet.herokuapp.com/download adresine gidelim.
         driver.get("https://the-internet.herokuapp.com/download");
         //3. logo.png dosyasını indirelim
-        driver.findElement(By.xpath("//a[text()='spectrum-logo.png']"))
-                .click();
+        driver.findElement(By.xpath("//a[text()='picture.png']")).click();
+
         ReusableMethods.bekle(5);
         //4. Dosyanın başarıyla indirilip indirilmediğini test edelim
 
-        String dosyaYolu = "/Users/ahmetbulutluoz/Downloads/logo.png";
+        String dosyaYolu = "C:\\Users\\kirkg\\Downloads\\picture.logo\\";
 
         Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
 
