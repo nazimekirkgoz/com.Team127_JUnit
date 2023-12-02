@@ -33,7 +33,7 @@ public class C04_WebTables extends TestBase {
         String expectedIcerik = "Comfortable Gaming Chair";
         String actualBody = bodyElementi.getText();
         Assert.assertTrue(actualBody.contains(expectedIcerik));
-        //4.Web table’daki satir sayisinin 5 oldugunu test edin
+//4.Web table’daki satir sayisinin 5 oldugunu test edin
 
         List<WebElement> satirElementleriListesi = driver.findElements(By.xpath("//tbody/tr"));
         int expectedSatirSayisi = 5;

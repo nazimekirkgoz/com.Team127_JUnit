@@ -20,12 +20,13 @@ public class C08_KullaniciOlusturma extends TestBase {
         driver.findElement(By.xpath("(//span[text()='Account'])[1]")).click();
         //3- Sign Up linkine basalim
         driver.findElement(By.xpath("//*[text()=' Sign Up']")).click();
+        ReusableMethods.bekle(3);
         //4- Ad, soyad, mail ve sifre kutularina deger yazalim ve Sign Up butonuna basalim
 
-        WebElement fistNameKutusu = driver.findElement(By.xpath("//*[@id='firstName']"));
+        WebElement fistNameKutusu = driver.findElement(By.xpath("//input[@id='firstName']"));
 
         Actions actions = new Actions(driver);
-        ReusableMethods.bekle(1);
+
         actions.click(fistNameKutusu)
                 .sendKeys("Ahmet")
                 .sendKeys(Keys.TAB)
@@ -36,9 +37,15 @@ public class C08_KullaniciOlusturma extends TestBase {
                 .sendKeys("12345")
                 .sendKeys(Keys.TAB)
                 .sendKeys("12345")
+                .sendKeys(Keys.PAGE_DOWN)
                 .perform();
+        ReusableMethods.bekle(3);
 
-        driver.findElement(By.id("btn-submit-form")).click();
+
+      driver.findElement(By.xpath("//button[@id='btn-submit-form']")).click();
+
+      ReusableMethods.bekle(3);
+
 
         //5- Kaydin olusturuldugunu test edin
         //   Kayit olusturulunca bizi signIn sayfasina yonlendiriyor
