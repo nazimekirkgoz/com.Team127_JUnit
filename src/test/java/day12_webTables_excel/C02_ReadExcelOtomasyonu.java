@@ -1,11 +1,10 @@
-package day12;
+package day12_webTables_excel;
 
 import org.apache.poi.ss.usermodel.*;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class C02_ReadExcelOtomasyonu {
@@ -50,4 +49,4 @@ public class C02_ReadExcelOtomasyonu {
 
         Assert.assertEquals(expectedUlkeAdi,actualIstenenUlkeAdi);
     }
-}
+}   
