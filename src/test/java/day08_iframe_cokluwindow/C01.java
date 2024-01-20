@@ -65,7 +65,7 @@ public class C01 extends TestBase {
         name.click();
         name.sendKeys("Nazime");
         mail.click();
-        mail.sendKeys("kirkgoznazime@gmail.com");
+        mail.sendKeys("kirkgoznazime3@gmail.com");
 
         //7. Click 'Signup' button
 

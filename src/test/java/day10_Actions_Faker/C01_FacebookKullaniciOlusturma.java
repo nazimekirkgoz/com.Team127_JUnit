@@ -29,6 +29,7 @@ public class C01_FacebookKullaniciOlusturma extends TestBase {
         String email =faker.internet().emailAddress();
 
         actions.click(firstnameKutusu)
+
                 .sendKeys(faker.name().firstName())
                 .sendKeys(Keys.TAB)
                 .sendKeys(faker.name().lastName())
